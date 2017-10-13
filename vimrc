@@ -27,13 +27,10 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" Vim pathogen for path manipulation
-" syntax on
-execute pathogen#infect()
 filetype plugin indent on
 
-" Set color
-"let g:solarized_termcolors=256
+" Define background color
+let g:solarized_termcolors=256
 set background=dark
 colorscheme bubblegum
 
