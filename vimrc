@@ -33,9 +33,9 @@ execute pathogen#infect()
 filetype plugin indent on
 
 " Set color
-let g:solarized_termcolors=256
-set background=light
-colorscheme solarized
+"let g:solarized_termcolors=256
+set background=dark
+colorscheme bubblegum
 
 augroup vimrcEx
   autocmd!
