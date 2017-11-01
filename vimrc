@@ -30,9 +30,7 @@ endif
 filetype plugin indent on
 
 " Define background color
-let g:solarized_termcolors=256
-set background=dark
-colorscheme bubblegum
+colorscheme bubblegum-256-dark
 
 augroup vimrcEx
   autocmd!
