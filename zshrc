@@ -45,4 +45,5 @@ _load_settings "$HOME/.zsh/configs"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # aliases
+alias kuse="kubectl config set current-context"
 [[ -f ~/.aliases ]] && source ~/.aliases

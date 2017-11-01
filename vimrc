@@ -75,6 +75,7 @@ set expandtab
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
+" set list listchars=tab:\ \ ,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -119,14 +120,30 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
+" ~~ old settings ~~
+
+" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
+" let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+" Index ctags from any project, including those outside Rails
+" map <Leader>ct :!ctags -R .<CR>
+" set tags=tags;/
+
+" Color scheme
+" colorscheme github
+" highlight NonText guibg=#060606
+" highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+
+" ~~ old settings ~~
+
 " Switch between the last two files
 nnoremap <Leader><Leader> <c-^>
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 
 " vim-test mappings
 nnoremap <silent> <Leader>t :TestFile<CR>
@@ -165,7 +182,13 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" Setting fzf plugin 
+set rtp+=~/.fzf
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+" set clipboard
+set clipboard=unnamed
