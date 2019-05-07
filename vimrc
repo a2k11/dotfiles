@@ -100,8 +100,15 @@ set textwidth=80
 set colorcolumn=+1
 
 " Numbers
-set number
+set number relativenumber
 set numberwidth=5
+
+map <C-q><up> :tabr<cr>
+map <C-q><down> :tabl<cr>
+map <C-q><left> :tabp<cr>
+map <C-q><right> :tabn<cr>
+map <Space>nt :tabe<cr>
+map <C-q>f :FZF<cr>
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -131,6 +138,7 @@ inoremap <S-Tab> <c-n>
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
+let g:syntastic_ignore_files = ['schema.rb', '.*\.erb']
 
 " ~~ old settings ~~
 
@@ -183,10 +191,9 @@ set diffopt+=vertical
 " Setting fzf plugin 
 set rtp+=~/.fzf
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+nnoremap <A-right> gt
+nnoremap <A-left> gT
 
 " set clipboard
 set clipboard=unnamed
+
